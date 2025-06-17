@@ -1,0 +1,164 @@
+{
+  "navigation": {
+    "home": "首页",
+    "about": "关于",
+    "contact": "联系"
+  },
+  "tarot": {
+    "title": "神秘塔罗占卜",
+    "subtitle": "通过古老的卡牌智慧揭示你的命运",
+    "ballMessage": "专注你的问题，然后抽牌",
+    "questionPlaceholder": "我的职业未来会怎样？",
+    "questionTitle": "你的问题",
+    "spreadTitle": "牌阵类型",
+    "pastPresentFuture": "过去，现在，未来",
+    "celticCross": "凯尔特十字",
+    "threeCards": "三张牌",
+    "singleCard": "单张牌",
+    "drawButton": "抽牌",
+    "selectSpreadMessage": "选择牌阵并抽取你的牌",
+    "readingTitle": "你的解读",
+    "meaningsTitle": "牌义解释",
+    "copyright": "© 2023 神秘塔罗占卜。版权所有。",
+    "disclaimer": "仅供娱乐目的",
+    "upright": "正位",
+    "reversed": "逆位",
+    "past": "过去",
+    "present": "现在",
+    "future": "未来",
+    "noSpreadAlert": "请先选择牌阵类型",
+    "noQuestionAlert": "请在水晶球中专注你的问题",
+    "pastCard": "过去通过以下方式影响你的现状",
+    "presentCard": "你当前的情况特点是",
+    "futureCard": "未来的道路通向",
+    "connectionMessage": "卡牌揭示了一段转变和成长的旅程。",
+    "celticIntro": "凯尔特十字牌阵揭示了围绕你问题的复杂影响网络。",
+    "centralCard": "中心牌代表你的当前情况：",
+    "crossingCard": "交叉牌显示挑战或支持你的因素：",
+    "complexReading": "这个复杂的解读表明你的情况中有多种因素在起作用。",
+    "threeAspects": "三张牌揭示了你情况的不同方面：",
+    "considerInteraction": "考虑这三个方面在你生活中的相互作用。",
+    "singleMessage": "抽到的单张牌直接回应你的问题。",
+    "meditate": "冥想这张牌的信息以及它如何适用于你的情况。"
+  },
+  "cards": {
+    "The Fool": "愚者",
+    "The Magician": "魔术师",
+    "The High Priestess": "女祭司",
+    "The Empress": "皇后",
+    "The Emperor": "皇帝",
+    "The Hierophant": "教皇",
+    "The Lovers": "恋人",
+    "The Chariot": "战车",
+    "Strength": "力量",
+    "The Hermit": "隐者",
+    "Wheel of Fortune": "命运之轮",
+    "Justice": "正义",
+    "The Hanged Man": "倒吊人",
+    "Death": "死神",
+    "Temperance": "节制",
+    "The Devil": "恶魔",
+    "The Tower": "高塔",
+    "The Star": "星星",
+    "The Moon": "月亮",
+    "The Sun": "太阳",
+    "Judgement": "审判",
+    "The World": "世界"
+  },
+  "cardMeanings": {
+    "The Fool": {
+      "upright": "开始，自发性，自由精神",
+      "reversed": "鲁莽，判断力差"
+    },
+    "The Magician": {
+      "upright": "显化，足智多谋，力量",
+      "reversed": "操纵，计划不周"
+    },
+    "The High Priestess": {
+      "upright": "直觉，神秘，潜意识",
+      "reversed": "秘密，隐藏议程"
+    },
+    "The Empress": {
+      "upright": "女性气质，美丽，自然，丰盛",
+      "reversed": "依赖，窒息"
+    },
+    "The Emperor": {
+      "upright": "权威，结构，控制",
+      "reversed": "暴政，僵化"
+    },
+    "The Hierophant": {
+      "upright": "传统，从众，道德",
+      "reversed": "叛逆，非传统"
+    },
+    "The Lovers": {
+      "upright": "爱情，和谐，关系",
+      "reversed": "不和谐，失衡"
+    },
+    "The Chariot": {
+      "upright": "控制，意志力，胜利",
+      "reversed": "侵略性，缺乏方向"
+    },
+    "Strength": {
+      "upright": "力量，勇气，耐心",
+      "reversed": "软弱，自我怀疑"
+    },
+    "The Hermit": {
+      "upright": "灵魂探索，内省，内在指导",
+      "reversed": "孤立，孤独"
+    },
+    "Wheel of Fortune": {
+      "upright": "变化，循环，命运",
+      "reversed": "坏运气，抗拒变化"
+    },
+    "Justice": {
+      "upright": "正义，公平，真理",
+      "reversed": "不公平，不诚实"
+    },
+    "The Hanged Man": {
+      "upright": "牺牲，新视角",
+      "reversed": "拖延，犹豫不决"
+    },
+    "Death": {
+      "upright": "结束，变化，转变",
+      "reversed": "抗拒变化，停滞"
+    },
+    "Temperance": {
+      "upright": "平衡，节制，耐心",
+      "reversed": "失衡，过度"
+    },
+    "The Devil": {
+      "upright": "成瘾，物质主义，玩乐",
+      "reversed": "自由，释放，重夺力量"
+    },
+    "The Tower": {
+      "upright": "突然变化，动荡，启示",
+      "reversed": "避免灾难，恐惧变化"
+    },
+    "The Star": {
+      "upright": "希望，信仰，重生",
+      "reversed": "绝望，失望"
+    },
+    "The Moon": {
+      "upright": "幻觉，恐惧，焦虑",
+      "reversed": "释放恐惧，清晰"
+    },
+    "The Sun": {
+      "upright": "喜悦，成功，庆祝",
+      "reversed": "消极，抑郁"
+    },
+    "Judgement": {
+      "upright": "判断，重生，内在召唤",
+      "reversed": "自我怀疑，忽视召唤"
+    },
+    "The World": {
+      "upright": "完成，整合，成就",
+      "reversed": "不完整，缺乏结束"
+    }
+  },
+  "spreadMessages": {
+    "past-present-future": "过去影响现在...现在塑造未来",
+    "celtic-cross": "复杂的影响网络围绕着你的问题",
+    "three-cards": "三条道路在你面前展现",
+    "single-card": "一个真相从迷雾中浮现"
+  }
+} 

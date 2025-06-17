@@ -1,0 +1,164 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "tarot": {
+    "title": "Lecture de Tarot Mystique",
+    "subtitle": "Révélez votre destin avec la sagesse ancienne des cartes",
+    "ballMessage": "Concentrez-vous sur votre question et tirez vos cartes",
+    "questionPlaceholder": "Que me réserve l'avenir pour ma carrière ?",
+    "questionTitle": "Votre Question",
+    "spreadTitle": "Type de Tirage",
+    "pastPresentFuture": "Passé, Présent, Futur",
+    "celticCross": "Croix Celtique",
+    "threeCards": "Trois Cartes",
+    "singleCard": "Carte Unique",
+    "drawButton": "Tirer les Cartes",
+    "selectSpreadMessage": "Sélectionnez un tirage et tirez vos cartes",
+    "readingTitle": "Votre Lecture",
+    "meaningsTitle": "Significations des Cartes",
+    "copyright": "© 2023 Lectures de Tarot Mystique. Tous droits réservés.",
+    "disclaimer": "À des fins de divertissement uniquement",
+    "upright": "Droit",
+    "reversed": "Inversé",
+    "past": "Passé",
+    "present": "Présent",
+    "future": "Futur",
+    "noSpreadAlert": "Veuillez d'abord sélectionner un type de tirage",
+    "noQuestionAlert": "Veuillez concentrer votre question dans la boule de cristal",
+    "pastCard": "Le passé influence votre situation présente à travers",
+    "presentCard": "Votre situation actuelle se caractérise par",
+    "futureCard": "Le chemin futur mène vers",
+    "connectionMessage": "Les cartes révèlent un voyage de transformation et de croissance.",
+    "celticIntro": "Le tirage de la Croix Celtique révèle une tapisserie complexe d'influences entourant votre question.",
+    "centralCard": "La carte centrale représente votre situation actuelle :",
+    "crossingCard": "La carte de croisement montre ce qui vous défie ou vous soutient :",
+    "complexReading": "Cette lecture complexe suggère plusieurs facteurs en jeu dans votre situation.",
+    "threeAspects": "Les trois cartes révèlent différents aspects de votre situation :",
+    "considerInteraction": "Considérez comment ces trois aspects interagissent dans votre vie.",
+    "singleMessage": "La carte unique tirée parle directement à votre question.",
+    "meditate": "Méditez sur le message de cette carte et comment il s'applique à votre situation."
+  },
+  "cards": {
+    "The Fool": "Le Mat",
+    "The Magician": "Le Bateleur",
+    "The High Priestess": "La Papesse",
+    "The Empress": "L'Impératrice",
+    "The Emperor": "L'Empereur",
+    "The Hierophant": "Le Pape",
+    "The Lovers": "L'Amoureux",
+    "The Chariot": "Le Chariot",
+    "Strength": "La Force",
+    "The Hermit": "L'Ermite",
+    "Wheel of Fortune": "La Roue de Fortune",
+    "Justice": "La Justice",
+    "The Hanged Man": "Le Pendu",
+    "Death": "La Mort",
+    "Temperance": "Tempérance",
+    "The Devil": "Le Diable",
+    "The Tower": "La Tour",
+    "The Star": "L'Étoile",
+    "The Moon": "La Lune",
+    "The Sun": "Le Soleil",
+    "Judgement": "Le Jugement",
+    "The World": "Le Monde"
+  },
+  "cardMeanings": {
+    "The Fool": {
+      "upright": "Commencements, spontanéité, esprit libre",
+      "reversed": "Imprudence, mauvais jugement"
+    },
+    "The Magician": {
+      "upright": "Manifestation, débrouillardise, pouvoir",
+      "reversed": "Manipulation, mauvaise planification"
+    },
+    "The High Priestess": {
+      "upright": "Intuition, mystère, subconscient",
+      "reversed": "Secrets, agendas cachés"
+    },
+    "The Empress": {
+      "upright": "Féminité, beauté, nature, abondance",
+      "reversed": "Dépendance, étouffement"
+    },
+    "The Emperor": {
+      "upright": "Autorité, structure, contrôle",
+      "reversed": "Tyrannie, rigidité"
+    },
+    "The Hierophant": {
+      "upright": "Tradition, conformité, moralité",
+      "reversed": "Rébellion, non conventionnel"
+    },
+    "The Lovers": {
+      "upright": "Amour, harmonie, relations",
+      "reversed": "Désharmonie, déséquilibre"
+    },
+    "The Chariot": {
+      "upright": "Contrôle, volonté, victoire",
+      "reversed": "Agression, manque de direction"
+    },
+    "Strength": {
+      "upright": "Force, courage, patience",
+      "reversed": "Faiblesse, doute de soi"
+    },
+    "The Hermit": {
+      "upright": "Recherche de l'âme, introspection, guidance intérieure",
+      "reversed": "Isolement, solitude"
+    },
+    "Wheel of Fortune": {
+      "upright": "Changement, cycles, destin",
+      "reversed": "Malchance, résistance au changement"
+    },
+    "Justice": {
+      "upright": "Justice, équité, vérité",
+      "reversed": "Injustice, malhonnêteté"
+    },
+    "The Hanged Man": {
+      "upright": "Sacrifice, nouvelle perspective",
+      "reversed": "Temporisation, indécision"
+    },
+    "Death": {
+      "upright": "Fins, changement, transformation",
+      "reversed": "Résistance au changement, stagnation"
+    },
+    "Temperance": {
+      "upright": "Équilibre, modération, patience",
+      "reversed": "Déséquilibre, excès"
+    },
+    "The Devil": {
+      "upright": "Addiction, matérialisme, espièglerie",
+      "reversed": "Liberté, libération, récupération du pouvoir"
+    },
+    "The Tower": {
+      "upright": "Changement soudain, bouleversement, révélation",
+      "reversed": "Éviter la catastrophe, peur du changement"
+    },
+    "The Star": {
+      "upright": "Espoir, foi, rajeunissement",
+      "reversed": "Désespoir, désespérance"
+    },
+    "The Moon": {
+      "upright": "Illusion, peur, anxiété",
+      "reversed": "Libérer la peur, clarté"
+    },
+    "The Sun": {
+      "upright": "Joie, succès, célébration",
+      "reversed": "Négativité, dépression"
+    },
+    "Judgement": {
+      "upright": "Jugement, renaissance, appel intérieur",
+      "reversed": "Doute de soi, ignorer l'appel"
+    },
+    "The World": {
+      "upright": "Achèvement, intégration, accomplissement",
+      "reversed": "Inachèvement, manque de clôture"
+    }
+  },
+  "spreadMessages": {
+    "past-present-future": "Le passé influence le présent... le présent façonne le futur",
+    "celtic-cross": "Un réseau complexe d'influences entoure votre question",
+    "three-cards": "Trois chemins se révèlent devant vous",
+    "single-card": "Une seule vérité émerge des brumes"
+  }
+} 

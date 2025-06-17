@@ -1,0 +1,164 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "tarot": {
+    "title": "Mystic Tarot Reading",
+    "subtitle": "Unveil your destiny with the ancient wisdom of the cards",
+    "ballMessage": "Focus your question and draw your cards",
+    "questionPlaceholder": "What does the future hold for my career?",
+    "questionTitle": "Your Question",
+    "spreadTitle": "Spread Type",
+    "pastPresentFuture": "Past, Present, Future",
+    "celticCross": "Celtic Cross",
+    "threeCards": "Three Cards",
+    "singleCard": "Single Card",
+    "drawButton": "Draw Cards",
+    "selectSpreadMessage": "Select a spread and draw your cards",
+    "readingTitle": "Your Reading",
+    "meaningsTitle": "Card Meanings",
+    "copyright": "© 2023 Mystic Tarot Readings. All rights reserved.",
+    "disclaimer": "For entertainment purposes only",
+    "upright": "Upright",
+    "reversed": "Reversed",
+    "past": "Past",
+    "present": "Present",
+    "future": "Future",
+    "noSpreadAlert": "Please select a spread type first",
+    "noQuestionAlert": "Please focus your question in the crystal ball",
+    "pastCard": "The past influences your present situation through",
+    "presentCard": "Your current situation is characterized by",
+    "futureCard": "The future path leads toward",
+    "connectionMessage": "The cards reveal a journey of transformation and growth.",
+    "celticIntro": "The Celtic Cross spread reveals a complex tapestry of influences surrounding your question.",
+    "centralCard": "The central card represents your current situation:",
+    "crossingCard": "The crossing card shows what challenges or supports you:",
+    "complexReading": "This complex reading suggests multiple factors at play in your situation.",
+    "threeAspects": "The three cards reveal different aspects of your situation:",
+    "considerInteraction": "Consider how these three aspects interact in your life.",
+    "singleMessage": "The single card drawn speaks directly to your question.",
+    "meditate": "Meditate on this card's message and how it applies to your situation."
+  },
+  "cards": {
+    "The Fool": "The Fool",
+    "The Magician": "The Magician",
+    "The High Priestess": "The High Priestess",
+    "The Empress": "The Empress",
+    "The Emperor": "The Emperor",
+    "The Hierophant": "The Hierophant",
+    "The Lovers": "The Lovers",
+    "The Chariot": "The Chariot",
+    "Strength": "Strength",
+    "The Hermit": "The Hermit",
+    "Wheel of Fortune": "Wheel of Fortune",
+    "Justice": "Justice",
+    "The Hanged Man": "The Hanged Man",
+    "Death": "Death",
+    "Temperance": "Temperance",
+    "The Devil": "The Devil",
+    "The Tower": "The Tower",
+    "The Star": "The Star",
+    "The Moon": "The Moon",
+    "The Sun": "The Sun",
+    "Judgement": "Judgement",
+    "The World": "The World"
+  },
+  "cardMeanings": {
+    "The Fool": {
+      "upright": "Beginnings, spontaneity, free spirit",
+      "reversed": "Recklessness, poor judgment"
+    },
+    "The Magician": {
+      "upright": "Manifestation, resourcefulness, power",
+      "reversed": "Manipulation, poor planning"
+    },
+    "The High Priestess": {
+      "upright": "Intuition, mystery, subconscious",
+      "reversed": "Secrets, hidden agendas"
+    },
+    "The Empress": {
+      "upright": "Femininity, beauty, nature, abundance",
+      "reversed": "Dependence, smothering"
+    },
+    "The Emperor": {
+      "upright": "Authority, structure, control",
+      "reversed": "Tyranny, rigidity"
+    },
+    "The Hierophant": {
+      "upright": "Tradition, conformity, morality",
+      "reversed": "Rebellion, unconventional"
+    },
+    "The Lovers": {
+      "upright": "Love, harmony, relationships",
+      "reversed": "Disharmony, imbalance"
+    },
+    "The Chariot": {
+      "upright": "Control, willpower, victory",
+      "reversed": "Aggression, lack of direction"
+    },
+    "Strength": {
+      "upright": "Strength, courage, patience",
+      "reversed": "Weakness, self-doubt"
+    },
+    "The Hermit": {
+      "upright": "Soul-searching, introspection, inner guidance",
+      "reversed": "Isolation, loneliness"
+    },
+    "Wheel of Fortune": {
+      "upright": "Change, cycles, fate",
+      "reversed": "Bad luck, resistance to change"
+    },
+    "Justice": {
+      "upright": "Justice, fairness, truth",
+      "reversed": "Unfairness, dishonesty"
+    },
+    "The Hanged Man": {
+      "upright": "Sacrifice, new perspective",
+      "reversed": "Stalling, indecision"
+    },
+    "Death": {
+      "upright": "Endings, change, transformation",
+      "reversed": "Resistance to change, stagnation"
+    },
+    "Temperance": {
+      "upright": "Balance, moderation, patience",
+      "reversed": "Imbalance, excess"
+    },
+    "The Devil": {
+      "upright": "Addiction, materialism, playfulness",
+      "reversed": "Freedom, release, reclaiming power"
+    },
+    "The Tower": {
+      "upright": "Sudden change, upheaval, revelation",
+      "reversed": "Avoiding disaster, fear of change"
+    },
+    "The Star": {
+      "upright": "Hope, faith, rejuvenation",
+      "reversed": "Hopelessness, despair"
+    },
+    "The Moon": {
+      "upright": "Illusion, fear, anxiety",
+      "reversed": "Releasing fear, clarity"
+    },
+    "The Sun": {
+      "upright": "Joy, success, celebration",
+      "reversed": "Negativity, depression"
+    },
+    "Judgement": {
+      "upright": "Judgment, rebirth, inner calling",
+      "reversed": "Self-doubt, ignoring the call"
+    },
+    "The World": {
+      "upright": "Completion, integration, accomplishment",
+      "reversed": "Incompletion, lack of closure"
+    }
+  },
+  "spreadMessages": {
+    "past-present-future": "The past influences the present... the present shapes the future",
+    "celtic-cross": "A complex web of influences surrounds your question",
+    "three-cards": "Three paths reveal themselves before you",
+    "single-card": "A single truth emerges from the mists"
+  }
+} 

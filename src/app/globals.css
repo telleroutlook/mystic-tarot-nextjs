@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+  color: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Language-specific fonts using system fonts */
+.lang-zh { font-family: 'Microsoft YaHei', 'SimHei', 'Arial Unicode MS', sans-serif; }
+.lang-ar { font-family: 'Arial Unicode MS', 'Tahoma', 'DejaVu Sans', sans-serif; direction: rtl; }
+.lang-hi { font-family: 'Mangal', 'Arial Unicode MS', 'Nirmala UI', sans-serif; }
+.lang-fr { font-family: 'Times New Roman', Times, serif; }
+.lang-en { font-family: 'Times New Roman', Times, serif; }
+
+/* Improved contrast backgrounds */
+.bg-card { background-color: rgba(30, 27, 75, 0.9); }
+.bg-card-light { background-color: rgba(67, 56, 202, 0.2); }
+.text-high-contrast { color: #f1f5f9; }
+.text-medium-contrast { color: #e2e8f0; }
+.text-low-contrast { color: #cbd5e1; }
+
+.tarot-card {
+  width: 100px;
+  height: 160px;
+  perspective: 1000px;
+  transition: transform 0.6s;
+}
+
+@media (min-width: 640px) {
+  .tarot-card {
+    width: 120px;
+    height: 200px;
+  }
+}
+
+@media (min-width: 768px) {
+  .tarot-card {
+    width: 150px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tarot-card {
+    width: 180px;
+    height: 300px;
+  }
+}
+
+.tarot-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.tarot-card.flipped .tarot-card-inner {
+  transform: rotateY(180deg);
+}
+
+.tarot-card-front, .tarot-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarot-card-back {
+  background: linear-gradient(135deg, #4c1d95, #312e81);
+  transform: rotateY(180deg);
+  border: 2px solid #8b5cf6;
+}
+
+.tarot-card-front {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  color: #1e293b;
+  border: 2px solid #64748b;
+}
+
+.glow {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px #a78bfa, 0 0 10px #a78bfa;
+  }
+  to {
+    box-shadow: 0 0 15px #a78bfa, 0 0 30px #7c3aed;
+  }
+}
+
+.card-spread {
+  transition: all 0.5s ease;
+}
+
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.crystal-ball {
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(139, 92, 246, 0.4) 40%, transparent 70%);
+  box-shadow: inset 0 0 50px rgba(255,255,255,0.3),
+              inset 0 0 80px rgba(139, 92, 246, 0.4),
+              0 0 50px rgba(139, 92, 246, 0.6);
+}
+
+.pulse {
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 640px) {
+  .text-4xl { font-size: 2rem; }
+  .text-5xl { font-size: 2.5rem; }
+  .crystal-ball { width: 200px; height: 200px; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Button improvements */
+.btn-primary {
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+  border: 2px solid #a78bfa;
+  color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #6d28d9, #2563eb);
+  border-color: #c4b5fd;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: rgba(124, 58, 237, 0.3);
+  border: 2px solid #8b5cf6;
+  color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(124, 58, 237, 0.5);
+  border-color: #a78bfa;
+}
+
+.btn-secondary.selected {
+  background: rgba(124, 58, 237, 0.7);
+  border-color: #c4b5fd;
+  box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+}
+
+.crystal-text {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+               0 0 20px rgba(139, 92, 246, 0.6), 
+               2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Direction support for RTL languages */
+.dir-rtl {
+  direction: rtl;
+}
+
+.dir-ltr {
+  direction: ltr;
+}
