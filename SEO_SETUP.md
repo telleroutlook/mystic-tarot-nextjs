@@ -8,7 +8,7 @@
 
 ```bash
 # Site Configuration
-NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_SITE_URL=https://teller.eu.org
 
 # SEO Verification Codes
 GOOGLE_SITE_VERIFICATION=your_google_verification_code
@@ -136,7 +136,7 @@ public/
 ### 1. 搜索引擎提交
 ```bash
 # 站点地图URL
-https://your-domain.com/sitemap.xml
+https://teller.eu.org/sitemap.xml
 
 # 提交到：
 # - Google Search Console

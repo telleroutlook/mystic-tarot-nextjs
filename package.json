@@ -2,6 +2,7 @@
   "name": "mystic-tarot-nextjs",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://teller.eu.org",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
