@@ -6,21 +6,13 @@ import { Metadata } from 'next';
 
 type Props = {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'metadata' });
   
-  const localeNames: Record<string, string> = {
-    en: 'English',
-    zh: '中文',
-    fr: 'Français', 
-    ar: 'العربية',
-    hi: 'हिन्दी'
-  };
-
   return {
     title: t('title'),
     description: t('description'),
@@ -49,7 +41,7 @@ export default async function LocaleLayout({
   const {locale} = await params;
   
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
   }
  

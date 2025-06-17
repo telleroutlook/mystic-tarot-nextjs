@@ -6,6 +6,7 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import TarotCard from '@/components/TarotCard';
 import ReadingGenerator from '@/components/ReadingGenerator';
 import CardMeanings from '@/components/CardMeanings';
+import Breadcrumb from '@/components/Breadcrumb';
 import { TarotCard as TarotCardType, SpreadType, drawCards, getCardRotation } from '@/lib/tarot';
 
 // 定义状态接口
@@ -221,41 +222,60 @@ export default function HomePage() {
         </div>
       </header>
 
+      {/* Breadcrumb Navigation */}
+      <nav className="bg-purple-800 bg-opacity-30 py-2">
+        <div className="container mx-auto px-4">
+          <Breadcrumb />
+        </div>
+      </nav>
+
       {/* Main Content */}
-      <main className="flex-grow container mx-auto px-2 md:px-4 py-4 md:py-8">
+      <main className="flex-grow container mx-auto px-2 md:px-4 py-4 md:py-8" role="main">
         <div className="flex flex-col lg:flex-row gap-4 md:gap-8">
           
           {/* Left Column - Crystal Ball & Controls */}
-          <div className="w-full lg:w-1/3 flex flex-col items-center">
+          <aside className="w-full lg:w-1/3 flex flex-col items-center" role="complementary" aria-label="Tarot Reading Controls">
             
             {/* Crystal Ball */}
-            <div className="crystal-ball w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-300 relative mb-6 md:mb-8 pulse">
+            <div 
+              className="crystal-ball w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-300 relative mb-6 md:mb-8 pulse"
+              role="img"
+              aria-label="Crystal ball displaying mystical message"
+            >
               <div className="absolute inset-0 flex items-center justify-center p-4 text-center text-white font-bold text-sm md:text-base crystal-text">
                 {ballMessage || t('ballMessage')}
               </div>
             </div>
             
             {/* Controls */}
-            <div className="bg-card p-4 md:p-6 rounded-lg w-full max-w-md border border-purple-700">
+            <section className="bg-card p-4 md:p-6 rounded-lg w-full max-w-md border border-purple-700" aria-labelledby="tarot-controls">
               
               {/* Question Input */}
-              <h3 className="text-lg md:text-xl font-semibold mb-4 text-high-contrast">
+              <h2 id="tarot-controls" className="text-lg md:text-xl font-semibold mb-4 text-high-contrast">
                 {t('questionTitle')}
-              </h3>
+              </h2>
+              <label htmlFor="question-input" className="sr-only">
+                Enter your question for the tarot reading
+              </label>
               <textarea 
+                id="question-input"
                 value={question}
                 onChange={(e) => handleQuestionChange(e.target.value)}
                 className="w-full bg-purple-800 bg-opacity-50 border border-purple-600 rounded p-3 text-high-contrast placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm md:text-base" 
                 rows={4}
                 placeholder={t('questionPlaceholder')}
+                aria-describedby="question-help"
               />
+              <div id="question-help" className="sr-only">
+                Enter a specific question you would like the tarot cards to provide guidance on
+              </div>
               
               {/* Spread Selection */}
-              <div className="mt-4 md:mt-6">
-                <h3 className="text-lg md:text-xl font-semibold mb-4 text-high-contrast">
+              <fieldset className="mt-4 md:mt-6">
+                <legend className="text-lg md:text-xl font-semibold mb-4 text-high-contrast">
                   {t('spreadTitle')}
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                </legend>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4" role="radiogroup" aria-labelledby="spread-selection">
                   {spreadButtons.map((spread) => (
                     <button
                       key={spread.key}
@@ -263,32 +283,51 @@ export default function HomePage() {
                       className={`btn-secondary py-2 px-3 md:px-4 rounded transition text-sm md:text-base ${
                         selectedSpread === spread.key ? 'selected ring-2 ring-purple-400' : ''
                       }`}
+                      role="radio"
+                      aria-checked={selectedSpread === spread.key}
+                      aria-describedby={`${spread.key}-description`}
                     >
                       {spread.label}
                     </button>
                   ))}
                 </div>
-              </div>
+              </fieldset>
               
               {/* Draw Cards Button */}
               <button 
                 onClick={handleDrawCards}
                 className="mt-6 md:mt-8 w-full btn-primary font-bold py-3 px-4 rounded-full shadow-lg transition transform hover:scale-105 glow text-sm md:text-base"
+                aria-describedby="draw-cards-help"
               >
-                <span className="mr-2">✨</span> 
+                <span className="mr-2" aria-hidden="true">✨</span> 
                 {t('drawButton')}
               </button>
-            </div>
-          </div>
+              <div id="draw-cards-help" className="sr-only">
+                Click to draw tarot cards based on your selected spread and question
+              </div>
+            </section>
+          </aside>
           
           {/* Right Column - Card Spread & Reading */}
-          <div className="w-full lg:w-2/3">
+          <section className="w-full lg:w-2/3" aria-labelledby="reading-area">
             
             {/* Card Reading Area */}
-            <div className="min-h-64 md:min-h-96 bg-card-light border-2 border-purple-800 rounded-xl p-4 md:p-6 flex flex-col items-center justify-center">
+            <div 
+              className="min-h-64 md:min-h-96 bg-card-light border-2 border-purple-800 rounded-xl p-4 md:p-6 flex flex-col items-center justify-center"
+              role="region"
+              aria-labelledby="card-spread-heading"
+              aria-live="polite"
+            >
+              <h2 id="card-spread-heading" className="sr-only">
+                {drawnCards.length > 0 ? 'Your Tarot Card Reading' : 'Tarot Card Reading Area'}
+              </h2>
               
               {/* Card Spread */}
-              <div className="flex flex-wrap justify-center gap-3 md:gap-6 card-spread">
+              <div 
+                className="flex flex-wrap justify-center gap-3 md:gap-6 card-spread"
+                role="group"
+                aria-label={drawnCards.length > 0 ? `${drawnCards.length} tarot cards drawn` : 'No cards drawn yet'}
+              >
                 {drawnCards.length > 0 ? (
                   drawnCards.map((card, index) => (
                     <TarotCard
@@ -299,8 +338,8 @@ export default function HomePage() {
                     />
                   ))
                 ) : (
-                  <div className="text-center text-medium-contrast italic">
-                    <div className="text-4xl md:text-5xl mb-2 opacity-50">🃏</div>
+                  <div className="text-center text-medium-contrast italic" role="status" aria-label="Waiting for card selection">
+                    <div className="text-4xl md:text-5xl mb-2 opacity-50" aria-hidden="true">🃏</div>
                     <p className="text-sm md:text-base">{t('selectSpreadMessage')}</p>
                   </div>
                 )}
@@ -308,23 +347,29 @@ export default function HomePage() {
               
               {/* Reading Result */}
               {showReading && drawnCards.length > 0 && selectedSpread && (
-                <div className="mt-6 md:mt-8 w-full max-w-2xl">
+                <section className="mt-6 md:mt-8 w-full max-w-2xl" aria-labelledby="reading-interpretation">
+                  <h3 id="reading-interpretation" className="sr-only">
+                    Tarot Card Reading Interpretation
+                  </h3>
                   <ReadingGenerator 
                     cards={drawnCards}
                     spreadType={selectedSpread}
                     question={question}
                   />
-                </div>
+                </section>
               )}
             </div>
             
             {/* Card Meanings */}
             {showMeanings && drawnCards.length > 0 && (
-              <div className="mt-6 md:mt-8">
+              <section className="mt-6 md:mt-8" aria-labelledby="card-meanings-heading">
+                <h3 id="card-meanings-heading" className="sr-only">
+                  Individual Card Meanings
+                </h3>
                 <CardMeanings cards={drawnCards} />
-              </div>
+              </section>
             )}
-          </div>
+          </section>
         </div>
       </main>
 

@@ -1,17 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// Remove Google Fonts imports to avoid build timeout
+// import { Geist, Geist_Mono } from "next/font/google";
 import { getLocale } from 'next-intl/server';
+import StructuredData from '@/components/StructuredData';
+import WebVitals from '@/components/WebVitals';
 import "./globals.css";
 
-const geistSans = Geist({
+// Use system fonts as fallback
+const systemFonts = {
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+  className: "font-sans",
+};
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const systemMono = {
+  variable: "--font-geist-mono", 
+  className: "font-mono",
+};
 
 export const metadata: Metadata = {
   title: {
@@ -19,8 +23,8 @@ export const metadata: Metadata = {
     template: "%s | Mystic Tarot Reading"
   },
   description: "Unveil your destiny with the ancient wisdom of the cards. Professional tarot card divination and fortune telling platform with multiple spreads and multilingual support.",
-  keywords: ["tarot", "divination", "fortune telling", "mystic", "cards", "reading", "destiny", "spiritual"],
-  authors: [{ name: "Mystic Tarot" }],
+  keywords: ["tarot", "divination", "fortune telling", "mystic", "cards", "reading", "destiny", "spiritual", "celtic cross", "past present future", "online tarot", "free tarot reading"],
+  authors: [{ name: "Mystic Tarot", url: "https://mystictarot.com" }],
   creator: "Mystic Tarot",
   publisher: "Mystic Tarot",
   formatDetection: {
@@ -61,6 +65,7 @@ export const metadata: Metadata = {
     description: "Unveil your destiny with the ancient wisdom of the cards. Professional tarot card divination and fortune telling platform.",
     images: ["/images/twitter-card.png"],
     creator: "@mystictarot",
+    site: "@mystictarot",
   },
   robots: {
     index: true,
@@ -94,6 +99,30 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   category: "lifestyle",
+  ...(process.env.GOOGLE_SITE_VERIFICATION && {
+    verification: {
+      google: process.env.GOOGLE_SITE_VERIFICATION,
+      ...(process.env.YANDEX_VERIFICATION && { yandex: process.env.YANDEX_VERIFICATION }),
+      ...(process.env.YAHOO_VERIFICATION && { yahoo: process.env.YAHOO_VERIFICATION }),
+      ...(process.env.BING_VERIFICATION && {
+        other: {
+          'msvalidate.01': process.env.BING_VERIFICATION,
+        },
+      }),
+    },
+  }),
+  applicationName: "Mystic Tarot Reading",
+  referrer: "origin-when-cross-origin",
+  appleWebApp: {
+    capable: true,
+    title: "Mystic Tarot",
+    statusBarStyle: "default",
+  },
+  other: {
+    'revisit-after': '7 days',
+    'distribution': 'global',
+    'rating': 'general',
+  },
 };
 
 export default async function RootLayout({
@@ -116,8 +145,10 @@ export default async function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${systemFonts.variable} ${systemMono.variable} antialiased`}
       >
+        <StructuredData locale={locale} type="application" />
+        <WebVitals />
         {children}
       </body>
     </html>
