@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import TarotCard from '@/components/TarotCard';
@@ -15,6 +15,12 @@ interface ReadingState {
   drawnCards: TarotCardType[];
   showReading: boolean;
   showMeanings: boolean;
+}
+
+// 定义持久化配置接口
+interface PersistentConfig {
+  locale: string;
+  selectedSpread: SpreadType | null;
 }
 
 export default function HomePage() {
@@ -33,37 +39,102 @@ export default function HomePage() {
   // 从localStorage恢复状态
   useEffect(() => {
     try {
-      const savedState = localStorage.getItem('tarot-reading-state');
-      if (savedState) {
-        const state: ReadingState = JSON.parse(savedState);
-        setSelectedSpread(state.selectedSpread);
-        setQuestion(state.question);
-        setDrawnCards(state.drawnCards);
-        setShowReading(state.showReading);
-        setShowMeanings(state.showMeanings);
+      // 检查是否为语言切换（通过检查时间戳标记）
+      const languageSwitchTimestamp = localStorage.getItem('tarot-language-switch-timestamp');
+      const now = Date.now();
+      const isRecentLanguageSwitch = languageSwitchTimestamp && 
+        (now - parseInt(languageSwitchTimestamp)) < 2000; // 2秒内的操作视为语言切换
+      
+      if (isRecentLanguageSwitch) {
+        // 语言切换：恢复完整状态
+        console.log('Language switch detected - loading full state');
+        
+        const savedState = localStorage.getItem('tarot-current-state');
+        console.log(`Loading current state:`, savedState);
+        if (savedState) {
+          const state: ReadingState = JSON.parse(savedState);
+          console.log(`Parsed state:`, state);
+          setSelectedSpread(state.selectedSpread);
+          setQuestion(state.question || '');
+          setDrawnCards(state.drawnCards || []);
+          setShowReading(state.showReading || false);
+          setShowMeanings(state.showMeanings || false);
+        }
+      } else {
+        // 页面刷新：只恢复语言设置和Spread Type
+        console.log('Page refresh detected - loading minimal state');
+        
+        const savedConfig = localStorage.getItem('tarot-persistent-config');
+        if (savedConfig) {
+          const config: PersistentConfig = JSON.parse(savedConfig);
+          if (config.selectedSpread) {
+            setSelectedSpread(config.selectedSpread);
+          }
+        }
+        
+        // 清空其他状态
+        setQuestion('');
+        setDrawnCards([]);
+        setShowReading(false);
+        setShowMeanings(false);
       }
     } catch (error) {
       console.error('Error loading reading state:', error);
     }
+    
     setIsLoaded(true);
-  }, []);
+  }, [locale]);
 
-  // 保存状态到localStorage
-  const saveState = (newState: Partial<ReadingState>) => {
+  // 保存持久化配置（语言和spread type）
+  const savePersistentConfig = () => {
     try {
-      const currentState: ReadingState = {
+      const config: PersistentConfig = {
+        locale,
+        selectedSpread
+      };
+      localStorage.setItem('tarot-persistent-config', JSON.stringify(config));
+    } catch (error) {
+      console.error('Error saving persistent config:', error);
+    }
+  };
+
+  // 保存当前完整状态
+  const saveCurrentState = useCallback(() => {
+    try {
+      const state: ReadingState = {
         selectedSpread,
         question,
         drawnCards,
         showReading,
-        showMeanings,
-        ...newState
+        showMeanings
       };
-      localStorage.setItem('tarot-reading-state', JSON.stringify(currentState));
+      console.log(`Saving current state:`, state);
+      localStorage.setItem('tarot-current-state', JSON.stringify(state));
     } catch (error) {
-      console.error('Error saving reading state:', error);
+      console.error('Error saving current state:', error);
     }
-  };
+  }, [selectedSpread, question, drawnCards, showReading, showMeanings]);
+
+  // 在全局暴露保存函数，供语言切换时调用
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).saveTarotState = saveCurrentState;
+    }
+  }, [saveCurrentState]);
+
+  // 监听状态变化，保存当前状态
+  useEffect(() => {
+    if (isLoaded) {
+      saveCurrentState();
+    }
+  }, [selectedSpread, question, drawnCards, showReading, showMeanings, isLoaded]);
+
+  // 监听spread变化，保存持久化配置
+  useEffect(() => {
+    if (isLoaded) {
+      savePersistentConfig();
+    }
+  }, [selectedSpread, isLoaded]);
 
   // Update ball message when spread changes
   useEffect(() => {
@@ -93,17 +164,10 @@ export default function HomePage() {
     setShowReading(false);
     setShowMeanings(false);
     setDrawnCards([]);
-    saveState({
-      selectedSpread: spread,
-      showReading: false,
-      showMeanings: false,
-      drawnCards: []
-    });
   };
 
   const handleQuestionChange = (newQuestion: string) => {
     setQuestion(newQuestion);
-    saveState({ question: newQuestion });
   };
 
   const handleDrawCards = () => {
@@ -121,11 +185,6 @@ export default function HomePage() {
     setDrawnCards(cards);
     setShowReading(true);
     setShowMeanings(true);
-    saveState({
-      drawnCards: cards,
-      showReading: true,
-      showMeanings: true
-    });
   };
 
   const spreadButtons = [

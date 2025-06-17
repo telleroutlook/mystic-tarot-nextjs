@@ -23,6 +23,17 @@ export default function LanguageSwitcher() {
   const currentLanguage = languages.find(lang => lang.code === locale);
 
   function handleLanguageChange(newLocale: string) {
+    // 在切换语言前保存当前状态并设置时间戳标记
+    try {
+      if (typeof window !== 'undefined' && (window as any).saveTarotState) {
+        (window as any).saveTarotState();
+      }
+      // 设置语言切换时间戳标记
+      localStorage.setItem('tarot-language-switch-timestamp', Date.now().toString());
+    } catch (error) {
+      console.error('Error saving state before language change:', error);
+    }
+
     startTransition(() => {
       router.replace(pathname, {locale: newLocale});
     });
