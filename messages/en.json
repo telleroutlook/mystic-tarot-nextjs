@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Mystic Tarot Reading - Unveil Your Destiny",
+    "description": "Unveil your destiny with the ancient wisdom of the cards. Professional tarot card divination and fortune telling platform with multiple spreads and multilingual support."
+  },
   "navigation": {
     "home": "Home",
     "about": "About",
@@ -7,6 +11,7 @@
   "tarot": {
     "title": "Mystic Tarot Reading",
     "subtitle": "Unveil your destiny with the ancient wisdom of the cards",
+    "loading": "Loading...",
     "ballMessage": "Focus your question and draw your cards",
     "questionPlaceholder": "What does the future hold for my career?",
     "questionTitle": "Your Question",

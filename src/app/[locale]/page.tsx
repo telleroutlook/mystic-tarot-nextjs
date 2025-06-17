@@ -8,6 +8,15 @@ import ReadingGenerator from '@/components/ReadingGenerator';
 import CardMeanings from '@/components/CardMeanings';
 import { TarotCard as TarotCardType, SpreadType, drawCards, getCardRotation } from '@/lib/tarot';
 
+// 定义状态接口
+interface ReadingState {
+  selectedSpread: SpreadType | null;
+  question: string;
+  drawnCards: TarotCardType[];
+  showReading: boolean;
+  showMeanings: boolean;
+}
+
 export default function HomePage() {
   const t = useTranslations('tarot');
   const spreadMessages = useTranslations('spreadMessages');
@@ -19,6 +28,42 @@ export default function HomePage() {
   const [ballMessage, setBallMessage] = useState('');
   const [showReading, setShowReading] = useState(false);
   const [showMeanings, setShowMeanings] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  // 从localStorage恢复状态
+  useEffect(() => {
+    try {
+      const savedState = localStorage.getItem('tarot-reading-state');
+      if (savedState) {
+        const state: ReadingState = JSON.parse(savedState);
+        setSelectedSpread(state.selectedSpread);
+        setQuestion(state.question);
+        setDrawnCards(state.drawnCards);
+        setShowReading(state.showReading);
+        setShowMeanings(state.showMeanings);
+      }
+    } catch (error) {
+      console.error('Error loading reading state:', error);
+    }
+    setIsLoaded(true);
+  }, []);
+
+  // 保存状态到localStorage
+  const saveState = (newState: Partial<ReadingState>) => {
+    try {
+      const currentState: ReadingState = {
+        selectedSpread,
+        question,
+        drawnCards,
+        showReading,
+        showMeanings,
+        ...newState
+      };
+      localStorage.setItem('tarot-reading-state', JSON.stringify(currentState));
+    } catch (error) {
+      console.error('Error saving reading state:', error);
+    }
+  };
 
   // Update ball message when spread changes
   useEffect(() => {
@@ -48,6 +93,17 @@ export default function HomePage() {
     setShowReading(false);
     setShowMeanings(false);
     setDrawnCards([]);
+    saveState({
+      selectedSpread: spread,
+      showReading: false,
+      showMeanings: false,
+      drawnCards: []
+    });
+  };
+
+  const handleQuestionChange = (newQuestion: string) => {
+    setQuestion(newQuestion);
+    saveState({ question: newQuestion });
   };
 
   const handleDrawCards = () => {
@@ -65,6 +121,11 @@ export default function HomePage() {
     setDrawnCards(cards);
     setShowReading(true);
     setShowMeanings(true);
+    saveState({
+      drawnCards: cards,
+      showReading: true,
+      showMeanings: true
+    });
   };
 
   const spreadButtons = [
@@ -73,6 +134,15 @@ export default function HomePage() {
     { key: 'three-cards', label: t('threeCards') },
     { key: 'single-card', label: t('singleCard') },
   ];
+
+  // 等待状态加载完成再渲染
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-white text-lg">{t('loading')}</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -115,7 +185,7 @@ export default function HomePage() {
               </h3>
               <textarea 
                 value={question}
-                onChange={(e) => setQuestion(e.target.value)}
+                onChange={(e) => handleQuestionChange(e.target.value)}
                 className="w-full bg-purple-800 bg-opacity-50 border border-purple-600 rounded p-3 text-high-contrast placeholder-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm md:text-base" 
                 rows={4}
                 placeholder={t('questionPlaceholder')}

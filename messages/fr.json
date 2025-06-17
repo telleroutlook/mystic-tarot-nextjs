@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "Lecture de Tarot Mystique - Révélez Votre Destin",
+    "description": "Révélez votre destin avec la sagesse ancienne des cartes. Plateforme professionnelle de divination par cartes de tarot et de prédiction avec plusieurs tirages et support multilingue."
+  },
   "navigation": {
     "home": "Accueil",
     "about": "À propos",
@@ -7,6 +11,7 @@
   "tarot": {
     "title": "Lecture de Tarot Mystique",
     "subtitle": "Révélez votre destin avec la sagesse ancienne des cartes",
+    "loading": "Chargement...",
     "ballMessage": "Concentrez-vous sur votre question et tirez vos cartes",
     "questionPlaceholder": "Que me réserve l'avenir pour ma carrière ?",
     "questionTitle": "Votre Question",

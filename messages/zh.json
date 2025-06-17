@@ -1,4 +1,8 @@
 {
+  "metadata": {
+    "title": "神秘塔罗占卜 - 揭示你的命运",
+    "description": "通过古老的卡牌智慧揭示你的命运。专业的塔罗牌占卜和算命平台，支持多种牌阵和多语言。"
+  },
   "navigation": {
     "home": "首页",
     "about": "关于",
@@ -7,6 +11,7 @@
   "tarot": {
     "title": "神秘塔罗占卜",
     "subtitle": "通过古老的卡牌智慧揭示你的命运",
+    "loading": "加载中...",
     "ballMessage": "专注你的问题，然后抽牌",
     "questionPlaceholder": "我的职业未来会怎样？",
     "questionTitle": "你的问题",
