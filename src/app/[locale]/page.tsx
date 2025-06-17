@@ -1,5 +1,8 @@
 'use client';
 
+// Add Edge Runtime configuration for Cloudflare Pages
+export const runtime = 'edge';
+
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';

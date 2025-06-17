@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+// Add Edge Runtime configuration for Cloudflare Pages
+export const runtime = 'edge';
+
 export const metadata: Metadata = {
   title: 'Page Not Found | Mystic Tarot Reading',
   description: 'The page you are looking for could not be found. Return to our tarot reading platform and explore the mystical world of tarot cards.',
