@@ -8,6 +8,27 @@
     "about": "关于",
     "contact": "联系"
   },
+  "about": {
+    "title": "关于塔罗牌",
+    "subtitle": "探索古老的智慧传统",
+    "historyTitle": "历史起源",
+    "wisdomTitle": "神秘智慧",
+    "purposeTitle": "我们的使命",
+    "history": "塔罗牌起源于15世纪的欧洲，最初作为纸牌游戏出现。随着时间的推移，塔罗牌演变成一种强大的占卜工具，用于洞察人生的奥秘和指导未来的道路。",
+    "wisdom": "每张塔罗牌都蕴含着深刻的象征意义，通过78张牌的组合，能够揭示潜意识的智慧，帮助我们理解生活中的挑战与机遇。",
+    "purpose": "在这里，我们将古老的塔罗智慧与现代技术相结合，为您提供便捷而深刻的占卜体验。让神秘的卡牌为您指引前路。"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "与我们取得联系",
+    "description": "如果您有任何问题或建议，欢迎通过邮件与我们联系。",
+    "email": "联系邮箱",
+    "emailAddress": "contact@mystictarot.com"
+  },
+  "common": {
+    "startReading": "开始占卜",
+    "backToReading": "返回占卜"
+  },
   "tarot": {
     "title": "神秘塔罗占卜",
     "subtitle": "通过古老的卡牌智慧揭示你的命运",

@@ -8,6 +8,27 @@
     "about": "À propos",
     "contact": "Contact"
   },
+  "about": {
+    "title": "À propos du Tarot",
+    "subtitle": "Découvrez la Tradition de Sagesse Ancienne",
+    "historyTitle": "Origines",
+    "wisdomTitle": "Sagesse Ancienne",
+    "purposeTitle": "Notre Mission",
+    "history": "Les cartes de Tarot sont originaires de l'Europe du XVe siècle, apparaissant initialement comme cartes à jouer. Au fil du temps, le Tarot a évolué en un outil de divination puissant pour obtenir un aperçu des mystères de la vie et guider les chemins futurs.",
+    "wisdom": "Chaque carte de Tarot contient des significations symboliques profondes. Grâce à la combinaison de 78 cartes, elle peut révéler la sagesse du subconscient et nous aider à comprendre les défis et opportunités de la vie.",
+    "purpose": "Ici, nous combinons la sagesse ancienne du Tarot avec la technologie moderne pour vous fournir une expérience de divination pratique et profonde. Laissez les cartes mystiques guider votre chemin."
+  },
+  "contact": {
+    "title": "Nous Contacter",
+    "subtitle": "Entrer en Contact",
+    "description": "Si vous avez des questions ou des suggestions, n'hésitez pas à nous contacter par email.",
+    "email": "Email de Contact",
+    "emailAddress": "contact@mystictarot.com"
+  },
+  "common": {
+    "startReading": "Commencer la Lecture",
+    "backToReading": "Retour à la Lecture"
+  },
   "tarot": {
     "title": "Lecture de Tarot Mystique",
     "subtitle": "Révélez votre destin avec la sagesse ancienne des cartes",

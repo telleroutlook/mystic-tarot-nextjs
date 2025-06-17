@@ -8,6 +8,27 @@
     "about": "About",
     "contact": "Contact"
   },
+  "about": {
+    "title": "About Tarot",
+    "subtitle": "Discover the Ancient Wisdom Tradition",
+    "historyTitle": "Origins",
+    "wisdomTitle": "Ancient Wisdom",
+    "purposeTitle": "Our Purpose",
+    "history": "Tarot cards originated in 15th-century Europe, initially appearing as playing cards. Over time, Tarot evolved into a powerful divination tool for gaining insight into life's mysteries and guiding future paths.",
+    "wisdom": "Each Tarot card contains profound symbolic meanings. Through the combination of 78 cards, it can reveal the wisdom of the subconscious and help us understand the challenges and opportunities in life.",
+    "purpose": "Here, we combine ancient Tarot wisdom with modern technology to provide you with a convenient and profound divination experience. Let the mystical cards guide your path forward."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in Touch",
+    "description": "If you have any questions or suggestions, please feel free to contact us via email.",
+    "email": "Contact Email",
+    "emailAddress": "contact@mystictarot.com"
+  },
+  "common": {
+    "startReading": "Start Reading",
+    "backToReading": "Back to Reading"
+  },
   "tarot": {
     "title": "Mystic Tarot Reading",
     "subtitle": "Unveil your destiny with the ancient wisdom of the cards",

@@ -5,6 +5,7 @@ export const runtime = 'edge';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import TarotCard from '@/components/TarotCard';
 import ReadingGenerator from '@/components/ReadingGenerator';
@@ -29,6 +30,7 @@ interface PersistentConfig {
 
 export default function HomePage() {
   const t = useTranslations('tarot');
+  const nav = useTranslations('navigation');
   const spreadMessages = useTranslations('spreadMessages');
   const locale = useLocale();
   
@@ -211,16 +213,36 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       {/* Header */}
       <header className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 py-4 md:py-6 shadow-lg relative">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-high-contrast font-cinzel mb-2">
-            {t('title')}
-          </h1>
-          <p className="text-medium-contrast italic text-sm md:text-base">
-            {t('subtitle')}
-          </p>
-          
-          <div className="absolute top-2 md:top-4 right-2 md:right-4">
+        <div className="container mx-auto px-4">
+          {/* Navigation */}
+          <nav className="flex justify-between items-center mb-4">
+            <Link href={`/${locale}`} className="text-xl font-bold text-purple-300 hover:text-purple-200 transition-colors">
+              ✨ Mystic Tarot
+            </Link>
+            
+            <div className="hidden md:flex items-center space-x-6">
+              <Link href={`/${locale}`} className="text-purple-200 hover:text-white transition-colors">
+                {nav('home')}
+              </Link>
+              <Link href={`/${locale}/about`} className="text-purple-200 hover:text-white transition-colors">
+                {nav('about')}
+              </Link>
+              <Link href={`/${locale}/contact`} className="text-purple-200 hover:text-white transition-colors">
+                {nav('contact')}
+              </Link>
+            </div>
+            
             <LanguageSwitcher />
+          </nav>
+          
+          {/* Title Section */}
+          <div className="text-center">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-high-contrast font-cinzel mb-2">
+              {t('title')}
+            </h1>
+            <p className="text-medium-contrast italic text-sm md:text-base">
+              {t('subtitle')}
+            </p>
           </div>
         </div>
       </header>
@@ -378,6 +400,17 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="bg-gradient-to-r from-purple-900 via-blue-900 to-indigo-900 py-4 md:py-6 text-center text-medium-contrast border-t border-purple-800">
+        <div className="flex justify-center space-x-6 mb-4">
+          <Link href={`/${locale}`} className="hover:text-purple-400 transition-colors text-purple-400">
+            {nav('home')}
+          </Link>
+          <Link href={`/${locale}/about`} className="hover:text-purple-400 transition-colors">
+            {nav('about')}
+          </Link>
+          <Link href={`/${locale}/contact`} className="hover:text-purple-400 transition-colors">
+            {nav('contact')}
+          </Link>
+        </div>
         <p className="text-sm md:text-base">{t('copyright')}</p>
         <p className="text-xs md:text-sm mt-2">{t('disclaimer')}</p>
       </footer>
