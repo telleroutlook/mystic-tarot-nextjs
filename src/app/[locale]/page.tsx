@@ -41,6 +41,7 @@ export default function HomePage() {
   const [showReading, setShowReading] = useState(false);
   const [showMeanings, setShowMeanings] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // 从localStorage恢复状态
   useEffect(() => {
@@ -53,23 +54,19 @@ export default function HomePage() {
       
       if (isRecentLanguageSwitch) {
         // 语言切换：恢复完整状态
-        console.log('Language switch detected - loading full state');
-        
         const savedState = localStorage.getItem('tarot-current-state');
-        console.log(`Loading current state:`, savedState);
         if (savedState) {
           const state: ReadingState = JSON.parse(savedState);
-          console.log(`Parsed state:`, state);
           setSelectedSpread(state.selectedSpread);
           setQuestion(state.question || '');
           setDrawnCards(state.drawnCards || []);
           setShowReading(state.showReading || false);
           setShowMeanings(state.showMeanings || false);
         }
+        // 清除时间戳标记
+        localStorage.removeItem('tarot-language-switch-timestamp');
       } else {
         // 页面刷新：只恢复语言设置和Spread Type
-        console.log('Page refresh detected - loading minimal state');
-        
         const savedConfig = localStorage.getItem('tarot-persistent-config');
         if (savedConfig) {
           const config: PersistentConfig = JSON.parse(savedConfig);
@@ -114,7 +111,6 @@ export default function HomePage() {
         showReading,
         showMeanings
       };
-      console.log(`Saving current state:`, state);
       localStorage.setItem('tarot-current-state', JSON.stringify(state));
     } catch (error) {
       console.error('Error saving current state:', error);
@@ -128,12 +124,27 @@ export default function HomePage() {
     }
   }, [saveCurrentState]);
 
-  // 监听状态变化，保存当前状态
+  // 监听状态变化，使用防抖机制保存当前状态
   useEffect(() => {
     if (isLoaded) {
-      saveCurrentState();
+      // 清除之前的定时器
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
+      
+      // 设置新的防抖定时器
+      saveTimeoutRef.current = setTimeout(() => {
+        saveCurrentState();
+      }, 300); // 300ms 防抖
     }
-  }, [selectedSpread, question, drawnCards, showReading, showMeanings, isLoaded]);
+    
+    // 清理函数
+    return () => {
+      if (saveTimeoutRef.current) {
+        clearTimeout(saveTimeoutRef.current);
+      }
+    };
+  }, [selectedSpread, question, drawnCards, showReading, showMeanings, isLoaded, saveCurrentState]);
 
   // 监听spread变化，保存持久化配置
   useEffect(() => {
@@ -229,6 +240,15 @@ export default function HomePage() {
               </Link>
               <Link href={`/${locale}/contact`} className="text-purple-200 hover:text-white transition-colors">
                 {nav('contact')}
+              </Link>
+              <Link href={`/${locale}/projects`} className="text-purple-200 hover:text-white transition-colors">
+                {nav('projects')}
+              </Link>
+              <Link href={`/${locale}/privacy`} className="text-purple-200 hover:text-white transition-colors">
+                {nav('privacy')}
+              </Link>
+              <Link href={`/${locale}/faq`} className="text-purple-200 hover:text-white transition-colors">
+                {nav('faq')}
               </Link>
             </div>
             
@@ -409,6 +429,15 @@ export default function HomePage() {
           </Link>
           <Link href={`/${locale}/contact`} className="hover:text-purple-400 transition-colors">
             {nav('contact')}
+          </Link>
+          <Link href={`/${locale}/projects`} className="hover:text-purple-400 transition-colors">
+            {nav('projects')}
+          </Link>
+          <Link href={`/${locale}/privacy`} className="hover:text-purple-400 transition-colors">
+            {nav('privacy')}
+          </Link>
+          <Link href={`/${locale}/faq`} className="hover:text-purple-400 transition-colors">
+            {nav('faq')}
           </Link>
         </div>
         <p className="text-sm md:text-base">{t('copyright')}</p>

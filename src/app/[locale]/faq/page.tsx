@@ -4,16 +4,17 @@
 export const runtime = 'edge';
 
 import { useTranslations, useLocale } from 'next-intl';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export default function ContactPage() {
-  const t = useTranslations('contact');
+export default function FAQPage() {
+  const t = useTranslations('faq');
   const nav = useTranslations('navigation');
   const common = useTranslations('common');
   const locale = useLocale();
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   // Apply language-specific styling
   useEffect(() => {
@@ -30,8 +31,35 @@ export default function ContactPage() {
   }, [locale]);
 
   const breadcrumbItems = [
-    { name: nav('contact'), href: `/${locale}/contact` }
+    { name: nav('faq'), href: `/${locale}/faq` }
   ];
+
+  const faqItems = [
+    {
+      question: t('questions.howItWorks'),
+      answer: t('answers.howItWorks'),
+      icon: '🔮'
+    },
+    {
+      question: t('questions.accuracy'),
+      answer: t('answers.accuracy'),
+      icon: '⚖️'
+    },
+    {
+      question: t('questions.multiple'),
+      answer: t('answers.multiple'),
+      icon: '🔄'
+    },
+    {
+      question: t('questions.languages'),
+      answer: t('answers.languages'),
+      icon: '🌐'
+    }
+  ];
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -47,7 +75,7 @@ export default function ContactPage() {
         <Breadcrumb items={breadcrumbItems} />
 
         {/* Main Content */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {/* Title Section */}
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
@@ -58,48 +86,54 @@ export default function ContactPage() {
             </p>
           </div>
 
-          {/* Contact Card */}
-          <div className="bg-card backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300">
-            {/* Crystal Ball Icon */}
-            <div className="flex justify-center mb-8">
-              <div className="w-24 h-24 rounded-full crystal-ball flex items-center justify-center text-4xl pulse">
-                💌
-              </div>
-            </div>
-
-            {/* Description */}
-            <div className="text-center mb-8">
-              <p className="text-slate-200 leading-relaxed text-lg">
-                {t('description')}
-              </p>
-            </div>
-
-            {/* Email Section */}
-            <div className="bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl p-6 backdrop-blur-sm border border-purple-400/30">
-              <div className="flex items-center justify-center mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center mr-3">
-                  <span className="text-xl">📧</span>
-                </div>
-                <h3 className="text-xl font-semibold text-purple-300">
-                  {t('email')}
-                </h3>
-              </div>
-              
-              <div className="text-center">
-                <a 
-                  href={`mailto:${t('emailAddress')}`}
-                  className="inline-block text-2xl font-mono text-blue-300 hover:text-blue-200 transition-colors duration-300 bg-slate-800/50 px-6 py-3 rounded-lg border border-blue-500/30 hover:border-blue-400/50"
+          {/* FAQ Items */}
+          <div className="space-y-6">
+            {faqItems.map((item, index) => (
+              <div 
+                key={index}
+                className="bg-card backdrop-blur-sm rounded-2xl border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 overflow-hidden"
+              >
+                {/* Question */}
+                <button
+                  onClick={() => toggleExpanded(index)}
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-purple-800/20 transition-colors"
                 >
-                  {t('emailAddress')}
-                </a>
-              </div>
-            </div>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center mr-4">
+                      <span className="text-2xl">{item.icon}</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-purple-300">
+                      {item.question}
+                    </h3>
+                  </div>
+                  <div className={`transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`}>
+                    <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </button>
 
-            {/* Decorative Elements */}
-            <div className="flex justify-center space-x-8 mt-8 text-4xl opacity-60">
+                {/* Answer */}
+                <div className={`overflow-hidden transition-all duration-500 ${
+                  expandedIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                }`}>
+                  <div className="px-6 pb-6 pl-18">
+                    <p className="text-slate-200 leading-relaxed text-lg">
+                      {item.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Decorative Section */}
+          <div className="text-center mt-12 mb-8">
+            <div className="flex justify-center space-x-8 text-4xl opacity-60 mb-6">
               <span className="animate-pulse">✨</span>
               <span className="animate-pulse" style={{ animationDelay: '0.5s' }}>🔮</span>
               <span className="animate-pulse" style={{ animationDelay: '1s' }}>🌟</span>
+              <span className="animate-pulse" style={{ animationDelay: '1.5s' }}>⭐</span>
             </div>
           </div>
 
@@ -110,7 +144,7 @@ export default function ContactPage() {
               className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               <span className="mr-2">🎴</span>
-              {common('backToReading')}
+              {common('startReading')}
             </Link>
           </div>
         </div>
@@ -124,7 +158,7 @@ export default function ContactPage() {
             <Link href={`/${locale}/about`} className="hover:text-purple-400 transition-colors">
               {nav('about')}
             </Link>
-            <Link href={`/${locale}/contact`} className="hover:text-purple-400 transition-colors text-purple-400">
+            <Link href={`/${locale}/contact`} className="hover:text-purple-400 transition-colors">
               {nav('contact')}
             </Link>
             <Link href={`/${locale}/projects`} className="hover:text-purple-400 transition-colors">
@@ -133,7 +167,7 @@ export default function ContactPage() {
             <Link href={`/${locale}/privacy`} className="hover:text-purple-400 transition-colors">
               {nav('privacy')}
             </Link>
-            <Link href={`/${locale}/faq`} className="hover:text-purple-400 transition-colors">
+            <Link href={`/${locale}/faq`} className="hover:text-purple-400 transition-colors text-purple-400">
               {nav('faq')}
             </Link>
           </div>

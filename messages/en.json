@@ -6,7 +6,10 @@
   "navigation": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "projects": "Projects"
   },
   "about": {
     "title": "About Tarot",
@@ -186,5 +189,62 @@
     "celtic-cross": "A complex web of influences surrounds your question",
     "three-cards": "Three paths reveal themselves before you",
     "single-card": "A single truth emerges from the mists"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "subtitle": "Protecting Your Personal Information",
+    "dataCollectionTitle": "Data Collection",
+    "dataUsageTitle": "Data Usage",
+    "dataProtectionTitle": "Data Protection",
+    "dataCollection": "We only collect information necessary to provide tarot reading services. We do not collect any personally identifiable information, and your questions and reading results are stored locally only.",
+    "dataUsage": "Collected information is used solely to improve user experience, including saving your language preferences and reading history. We do not use your information for commercial purposes or share it with third parties.",
+    "dataProtection": "We employ advanced security measures to protect your data, including encrypted storage and secure transmission. You have the right to delete your local data at any time."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Answers to Your Questions",
+    "questions": {
+      "howItWorks": "How does tarot reading work?",
+      "accuracy": "Are the reading results accurate?",
+      "multiple": "Can I do multiple readings?",
+      "languages": "What languages are supported?"
+    },
+    "answers": {
+      "howItWorks": "Tarot reading is based on an ancient symbolic system that provides insight and guidance through randomly drawn card combinations. Each card has its unique meaning, combined with your question to provide personalized interpretation.",
+      "accuracy": "Tarot reading is an inspirational tool designed to provide perspectives and possible directions. The significance of results lies in helping you reflect and gain new perspectives, rather than predicting a definite future.",
+      "multiple": "Yes, you can perform new readings at any time. Different questions or readings at different times may yield different insights, reflecting the dynamic changes in life.",
+      "languages": "Our platform supports Chinese, English, French, Arabic, and Hindi, providing native language experiences for global users."
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Explore Our Innovative Products and Services",
+    "visitSite": "Visit Website",
+    "items": {
+      "idphoto": {
+        "name": "ID Photo Generator",
+        "description": "AI-powered professional passport and ID photo generator with intelligent cropping and background removal"
+      },
+      "byteslim": {
+        "name": "ByteSlim",
+        "description": "Lightweight file compression and optimization tool to enhance your file management efficiency"
+      },
+      "mdeditor": {
+        "name": "Markdown Editor",
+        "description": "Powerful online Markdown editor with live preview and export capabilities"
+      },
+      "mvking": {
+        "name": "MVKing",
+        "description": "Innovative multimedia processing platform providing professional tools for content creation"
+      },
+      "calculator": {
+        "name": "CalculateToday",
+        "description": "Free online calculator collection covering finance, health, lifestyle and more"
+      },
+      "trustavo": {
+        "name": "TrustAvo",
+        "description": "Secure temporary mailbox service to protect your privacy and email security"
+      }
+    }
   }
 } 

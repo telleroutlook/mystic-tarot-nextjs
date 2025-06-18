@@ -6,7 +6,10 @@
   "navigation": {
     "home": "首页",
     "about": "关于",
-    "contact": "联系"
+    "contact": "联系",
+    "privacy": "隐私政策",
+    "faq": "常见问题",
+    "projects": "我们的项目"
   },
   "about": {
     "title": "关于塔罗牌",
@@ -186,5 +189,62 @@
     "celtic-cross": "复杂的影响网络围绕着你的问题",
     "three-cards": "三条道路在你面前展现",
     "single-card": "一个真相从迷雾中浮现"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "subtitle": "保护您的个人信息",
+    "dataCollectionTitle": "信息收集",
+    "dataUsageTitle": "信息使用",
+    "dataProtectionTitle": "信息保护",
+    "dataCollection": "我们仅收集提供塔罗占卜服务所必需的信息。我们不会收集任何个人身份信息，您的问题和占卜结果仅在本地存储。",
+    "dataUsage": "收集的信息仅用于改善用户体验，包括保存您的语言偏好和占卜历史。我们不会将您的信息用于商业用途或与第三方分享。",
+    "dataProtection": "我们采用先进的安全措施保护您的数据，包括加密存储和安全传输。您有权随时删除您的本地数据。"
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "解答您的疑惑",
+    "questions": {
+      "howItWorks": "塔罗占卜如何运作？",
+      "accuracy": "占卜结果准确吗？",
+      "multiple": "我可以进行多次占卜吗？",
+      "languages": "支持哪些语言？"
+    },
+    "answers": {
+      "howItWorks": "塔罗占卜基于古老的象征系统，通过随机抽取的卡牌组合来提供洞察和指导。每张牌都有其独特的含义，结合您的问题提供个性化的解读。",
+      "accuracy": "塔罗占卜是一种启发性工具，旨在提供思考的角度和可能的方向。结果的意义在于帮助您反思和获得新的视角，而非预测确定的未来。",
+      "multiple": "是的，您可以随时进行新的占卜。不同的问题或在不同时间进行占卜可能会得到不同的洞察，这反映了生活的动态变化。",
+      "languages": "我们的平台支持中文、英文、法文、阿拉伯文和印地语，为全球用户提供母语体验。"
+    }
+  },
+  "projects": {
+    "title": "我们的项目",
+    "subtitle": "探索我们的创新产品和服务",
+    "visitSite": "访问网站",
+    "items": {
+      "idphoto": {
+        "name": "ID Photo Generator",
+        "description": "AI驱动的专业证件照生成器，智能裁剪和背景移除功能"
+      },
+      "byteslim": {
+        "name": "ByteSlim",
+        "description": "轻量级文件压缩和优化工具，提升您的文件管理效率"
+      },
+      "mdeditor": {
+        "name": "Markdown Editor",
+        "description": "功能强大的在线Markdown编辑器，支持实时预览和导出"
+      },
+      "mvking": {
+        "name": "MVKing",
+        "description": "创新的多媒体处理平台，为您的内容创作提供专业工具"
+      },
+      "calculator": {
+        "name": "CalculateToday",
+        "description": "免费在线计算器集合，涵盖金融、健康、生活等各个领域"
+      },
+      "trustavo": {
+        "name": "TrustAvo",
+        "description": "安全的临时邮箱服务，保护您的隐私和邮箱安全"
+      }
+    }
   }
 } 

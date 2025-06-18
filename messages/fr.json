@@ -6,7 +6,10 @@
   "navigation": {
     "home": "Accueil",
     "about": "À propos",
-    "contact": "Contact"
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "faq": "FAQ",
+    "projects": "Projets"
   },
   "about": {
     "title": "À propos du Tarot",
@@ -186,5 +189,62 @@
     "celtic-cross": "Un réseau complexe d'influences entoure votre question",
     "three-cards": "Trois chemins se révèlent devant vous",
     "single-card": "Une seule vérité émerge des brumes"
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "subtitle": "Protection de Vos Informations Personnelles",
+    "dataCollectionTitle": "Collecte de Données",
+    "dataUsageTitle": "Utilisation des Données",
+    "dataProtectionTitle": "Protection des Données",
+    "dataCollection": "Nous ne collectons que les informations nécessaires pour fournir des services de lecture de tarot. Nous ne collectons aucune information personnellement identifiable, et vos questions et résultats de lecture sont stockés localement uniquement.",
+    "dataUsage": "Les informations collectées sont utilisées uniquement pour améliorer l'expérience utilisateur, y compris la sauvegarde de vos préférences linguistiques et de votre historique de lecture. Nous n'utilisons pas vos informations à des fins commerciales ni ne les partageons avec des tiers.",
+    "dataProtection": "Nous employons des mesures de sécurité avancées pour protéger vos données, y compris le stockage crypté et la transmission sécurisée. Vous avez le droit de supprimer vos données locales à tout moment."
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Réponses à Vos Questions",
+    "questions": {
+      "howItWorks": "Comment fonctionne la lecture de tarot ?",
+      "accuracy": "Les résultats de lecture sont-ils précis ?",
+      "multiple": "Puis-je faire plusieurs lectures ?",
+      "languages": "Quelles langues sont supportées ?"
+    },
+    "answers": {
+      "howItWorks": "La lecture de tarot est basée sur un système symbolique ancien qui fournit des perspectives et des conseils à travers des combinaisons de cartes tirées au hasard. Chaque carte a sa signification unique, combinée avec votre question pour fournir une interprétation personnalisée.",
+      "accuracy": "La lecture de tarot est un outil d'inspiration conçu pour fournir des perspectives et des directions possibles. La signification des résultats réside dans le fait de vous aider à réfléchir et à obtenir de nouvelles perspectives, plutôt que de prédire un avenir défini.",
+      "multiple": "Oui, vous pouvez effectuer de nouvelles lectures à tout moment. Des questions différentes ou des lectures à des moments différents peuvent donner des perspectives différentes, reflétant les changements dynamiques de la vie.",
+      "languages": "Notre plateforme supporte le chinois, l'anglais, le français, l'arabe et l'hindi, offrant des expériences en langue maternelle pour les utilisateurs mondiaux."
+    }
+  },
+  "projects": {
+    "title": "Nos Projets",
+    "subtitle": "Découvrez Nos Produits et Services Innovants",
+    "visitSite": "Visiter le Site",
+    "items": {
+      "idphoto": {
+        "name": "ID Photo Generator",
+        "description": "Générateur de photos d'identité professionnel alimenté par l'IA avec recadrage intelligent et suppression d'arrière-plan"
+      },
+      "byteslim": {
+        "name": "ByteSlim",
+        "description": "Outil de compression et d'optimisation de fichiers léger pour améliorer l'efficacité de gestion de vos fichiers"
+      },
+      "mdeditor": {
+        "name": "Markdown Editor",
+        "description": "Éditeur Markdown en ligne puissant avec aperçu en direct et capacités d'exportation"
+      },
+      "mvking": {
+        "name": "MVKing",
+        "description": "Plateforme innovante de traitement multimédia fournissant des outils professionnels pour la création de contenu"
+      },
+      "calculator": {
+        "name": "CalculateToday",
+        "description": "Collection de calculatrices en ligne gratuites couvrant la finance, la santé, le mode de vie et plus"
+      },
+      "trustavo": {
+        "name": "TrustAvo",
+        "description": "Service de boîte mail temporaire sécurisé pour protéger votre vie privée et la sécurité de vos emails"
+      }
+    }
   }
 } 

@@ -124,6 +124,15 @@ export default function AboutPage() {
             <Link href={`/${locale}/contact`} className="hover:text-purple-400 transition-colors">
               {nav('contact')}
             </Link>
+            <Link href={`/${locale}/projects`} className="hover:text-purple-400 transition-colors">
+              {nav('projects')}
+            </Link>
+            <Link href={`/${locale}/privacy`} className="hover:text-purple-400 transition-colors">
+              {nav('privacy')}
+            </Link>
+            <Link href={`/${locale}/faq`} className="hover:text-purple-400 transition-colors">
+              {nav('faq')}
+            </Link>
           </div>
           <p className="text-sm">© 2023 Mystic Tarot. All rights reserved.</p>
         </footer>
