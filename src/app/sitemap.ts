@@ -37,9 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   })
   
-  // Add default locale redirect (higher priority)
+  // Add default locale redirect (higher priority) - now points to /en
   sitemap.push({
-    url: baseUrl,
+    url: `${baseUrl}/en`,
     lastModified: new Date(),
     changeFrequency: 'daily',
     priority: 1.0,

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   description: "Unveil your destiny with the ancient wisdom of the cards. Professional tarot card divination and fortune telling platform with multiple spreads and multilingual support.",
   keywords: ["tarot", "divination", "fortune telling", "mystic", "cards", "reading", "destiny", "spiritual", "celtic cross", "past present future", "online tarot", "free tarot reading"],
-  authors: [{ name: "Mystic Tarot", url: "https://mystictarot.com" }],
+  authors: [{ name: "Mystic Tarot", url: "https://teller.eu.org" }],
   creator: "Mystic Tarot",
   publisher: "Mystic Tarot",
   formatDetection: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'),
   alternates: {
-    canonical: "/",
+    canonical: "/en",
     languages: {
       'en': '/en',
       'zh': '/zh',

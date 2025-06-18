@@ -74,12 +74,17 @@ const nextConfig = {
     return [
       {
         source: '/index',
-        destination: '/',
+        destination: '/en',
         permanent: true,
       },
       {
         source: '/home',
-        destination: '/',
+        destination: '/en',
+        permanent: true,
+      },
+      {
+        source: '/',
+        destination: '/en',
         permanent: true,
       },
     ];
