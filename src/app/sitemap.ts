@@ -4,14 +4,14 @@ import { routing } from '@/i18n/routing'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://localhost:3000'
   
-  // Define all routes
+  // Define all available routes in the application
   const routes = [
     '', // home page
-    // Add more routes as your app grows
-    // '/about',
-    // '/contact',
-    // '/privacy',
-    // '/terms'
+    '/about',
+    '/contact', 
+    '/privacy',
+    '/faq',
+    '/projects'
   ]
   
   const sitemap: MetadataRoute.Sitemap = []
@@ -45,9 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 1.0,
   })
   
-  // Add additional SEO-friendly URLs
+  // Add additional SEO-friendly URLs for tarot spreads
   routing.locales.forEach(locale => {
-    // Tarot spread specific pages could be added here in the future
     const tarotSpreads = [
       'past-present-future',
       'celtic-cross', 

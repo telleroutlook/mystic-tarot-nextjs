@@ -26,6 +26,22 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   
+  // Webpack configuration to handle compatibility issues
+  webpack: (config: any, { isServer }: { isServer: boolean }) => {
+    // Handle unhandledRejection errors in development
+    if (!isServer && process.env.NODE_ENV === 'development') {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        stream: false,
+        crypto: false,
+        os: false,
+        path: false,
+        fs: false,
+      };
+    }
+    return config;
+  },
+  
   // Custom headers for better SEO
   async headers() {
     return [
