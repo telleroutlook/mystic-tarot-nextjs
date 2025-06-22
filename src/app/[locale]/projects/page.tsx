@@ -126,7 +126,6 @@ export default function ProjectsPage() {
                 <a
                   href={project.url}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-white bg-gradient-to-r from-purple-500 to-pink-500 px-6 py-3 rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 font-medium group-hover:scale-105"
                 >
                   {t('visitSite')}
