@@ -45,6 +45,12 @@ const projects = [
     url: 'https://trustavo.com/',
     icon: '📧',
     gradient: 'from-emerald-500 to-cyan-500'
+  },
+  {
+    id: '3we',
+    url: 'https://3we.org/',
+    icon: '🔧',
+    gradient: 'from-yellow-500 to-orange-500'
   }
 ];
 

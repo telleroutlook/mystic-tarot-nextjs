@@ -244,6 +244,10 @@
       "trustavo": {
         "name": "TrustAvo",
         "description": "安全的临时邮箱服务，保护您的隐私和邮箱安全"
+      },
+      "3we": {
+        "name": "3WE - 网络卓越",
+        "description": "专业的SEO工具和网站优化平台。生成关键词、站点地图、分析可读性、创建robots.txt文件，并优化标题以获得最佳搜索性能"
       }
     }
   }

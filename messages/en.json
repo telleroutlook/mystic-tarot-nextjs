@@ -244,6 +244,10 @@
       "trustavo": {
         "name": "TrustAvo",
         "description": "Secure temporary mailbox service to protect your privacy and email security"
+      },
+      "3we": {
+        "name": "3WE - Web Excellence",
+        "description": "Professional SEO tools and website optimization platform. Generate keywords, sitemaps, analyze readability, create robots.txt files, and optimize headlines for maximum search performance"
       }
     }
   }

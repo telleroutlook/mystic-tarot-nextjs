@@ -244,6 +244,10 @@
       "trustavo": {
         "name": "TrustAvo",
         "description": "Service de boîte mail temporaire sécurisé pour protéger votre vie privée et la sécurité de vos emails"
+      },
+      "3we": {
+        "name": "3WE - Excellence Web",
+        "description": "Plateforme d'outils SEO professionnels et d'optimisation de sites web. Générez des mots-clés, des sitemaps, analysez la lisibilité, créez des fichiers robots.txt et optimisez les titres pour des performances de recherche maximales"
       }
     }
   }
